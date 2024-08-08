@@ -52,17 +52,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://petstore.swagger.io/v2/store/order",
-					"protocol": "https",
+					"raw": "{{base_url}}",
 					"host": [
-						"petstore",
-						"swagger",
-						"io"
-					],
-					"path": [
-						"v2",
-						"store",
-						"order"
+						"{{base_url}}"
 					]
 				}
 			},
@@ -95,17 +87,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://petstore.swagger.io/v2/store/order/{{orderid_envss}}",
-					"protocol": "https",
+					"raw": "{{base_url}}/{{orderid_envss}}",
 					"host": [
-						"petstore",
-						"swagger",
-						"io"
+						"{{base_url}}"
 					],
 					"path": [
-						"v2",
-						"store",
-						"order",
 						"{{orderid_envss}}"
 					]
 				}
@@ -139,22 +125,45 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://petstore.swagger.io/v2/store/order/{{orderid_envss}}",
-					"protocol": "https",
+					"raw": "{{base_url}}/{{orderid_envss}}",
 					"host": [
-						"petstore",
-						"swagger",
-						"io"
+						"{{base_url}}"
 					],
 					"path": [
-						"v2",
-						"store",
-						"order",
 						"{{orderid_envss}}"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://petstore.swagger.io/v2/store/order",
+			"type": "string"
 		}
 	]
 }
